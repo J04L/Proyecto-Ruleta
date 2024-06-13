@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+body{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    background-color: #4b4b4b;
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    color: beige;
+}
+.numerosTemperatura{
+    list-style: none;
+}
+.boton:hover{
+    background-color: beige;
+    color: #333333;
+    border-radius: 4px;
+    font-weight: 900;
+}
+.verde{
+    background-color: #4CAF50;
+
+}
+#filasNumeros{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+#contenedorFichas{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+.ficha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 5rem;
+}
+
+#bordeFilas{
+    display: grid;
+    border: beige solid 3px;
+}
+#bordesFilas{
+    border: solid beige 4px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    grid-row: span 3;
+}
+.boton{
+    transition: background-color 0.5s ease;
+}
+.tercios > .red:hover{
+    color:#E74C3C;
+}
+.black{
+    background-color: #333333;
+}
+.red{
+    background-color: #E74C3C;
+}
+#contenedorCero{
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    padding: 4px;
+}
+.verde:hover{
+    color: #4CAF50;
+}
+.fila{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boton{
+    position:relative;
+}
+.fichaEnNumero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: solid beige 2px;
+    z-index: 3;
+}
+#numeros{
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 4fr) 1fr;
+    column-gap: 2px;
+    border-bottom: solid rgba(245, 245, 220, 0.653) 4px;
+    padding: 5px;
+}
+#num0{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: 1 /span 3;
+    border-bottom-left-radius: 60px;
+    border-top-left-radius: 60px;
+}
+#botonesOpcionTercios{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.tercioButton{
+    margin: 5px 70px 5px 70px;
+    border: solid rgba(245, 245, 220, 0.653) 3px;
+    border-radius: 7px;
+    grid-column: span 4;
+}
+
+.tercerafila{
+    grid-column: span 2;
+}
+.tercios > .num{
+    padding: 30px;
+}
+.tercios{
+    grid-template-columns: repeat(4, 1fr);
+    border: beige solid 2px;
+    border-radius: 4px;
+    padding: 5px;
+}
+.contenedorBotones{
+    display: grid;
+    text-align: center;
+}
+#botonesOpcionTercio{
+    grid-template-columns: repeat(3, 1fr);
+}
+#interaccionJuego{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#contenedorIzquierda{
+    display: flex;
+    flex-direction: column;
+    max-height: 95vh;
+}
+#numerosQueHanSalido{
+    flex: 1 1 auto;
+    border: solid beige 3px;
+    border-radius: 10px;
+    padding: 20px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: auto;
+}
+#numerosQueHanSalido::-webkit-scrollbar {
+    display: none;
+}
+#numerosQueHanSalido > li{
+    margin: 5px;
+    font-size: 17px;
+    width: 20%;
+    border: beige solid 2px;
+    border-radius: 3px;
+    padding: 10px;
+    text-align: center;
+}
+#vistaRuleta #contededorTiradaRapida{
+    display: flex;
+    justify-content: flex-end;
+    grid-column: 1;
+    grid-row: 2;
+    padding-right: 20px;
+}
+#vistaRuleta #tiradaRapida{
+
+    width: min-content;
+}
+#vistaRuleta .botonesEjecucion{
+    text-align: center;
+    background-color: #4CAF50;
+    color: beige;
+    padding: 10px;
+    font-size: 30px;
+    font-family: "Fredericka the Great", serif;
+    font-weight: 600;
+    font-style: normal;
+    border: solid beige 2px;
+    border-radius: 4px;
+    z-index: 2;
+    transition: background-color 0.5s ease;
+}
+#vistaRuleta #run{
+    grid-column: 2;
+    grid-row: 2;
+}
+#vistaRuleta .botonesEjecucion:hover{
+    background-color: beige;
+    color: #4CAF50;
+    border-radius: 7px;
+    border-color: #4CAF50;
+}
+#vistaRuleta #vistaCentral{
+    display: flex;
+    flex-direction: column;
+
+}
+#vistaRuleta{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 7fr 1fr;
+    margin-bottom: 20px;
+}
+#vistaRuleta #numeroGanadorEnGrande{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 3;
+    grid-row: 1;
+    border: solid beige 4px;
+    border-radius: 10px;
+    margin: 60px;
+    font-size: 200px;
+}
+#vistaRuleta #clearYDinero{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-column: 3;
+    grid-row: 2;
+    padding-left: 20px;
+}
+#vistaRuleta img{
+    transition: transform 6s ease-out;
+    width: 450px;
+    z-index: 1;
+    grid-column: 2;
+    margin: auto
+}
+.girarRuleta{
+    transform: rotate(1000deg);
+}
+#ruedaRuleta{
+    background-color: black;
+    border-radius: 25%;
+    width: 100%;
+    height: 25%;
+}

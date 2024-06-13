@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript13</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="contenedorIzquierda">
+      NUMEROS QUE HAN SALIDO:
+      <ul id="numerosQueHanSalido"></ul>
+    </div>
+    <div id="interaccionJuego">
+      <div id="vistaRuleta">
+          <div id="contededorTiradaRapida">
+            <input type="button" id="tiradaRapida" class="botonesEjecucion" value="RAPIDO" onclick="girarRuedaRapido()"></input>
+          </div>
+          <img src="img/ruleta.png" alt="">
+          <input type="button" id="run" name="run" class="botonesEjecucion" value="RUN" onclick="girarRuedaLento()"></input>
+          <div id="numeroGanadorEnGrande"></div>
+          <div id="clearYDinero">
+            <div id="dinero" data-dineroTotal = "100" data-dineroOriginal ="100">
+              TOTAL:
+            </div>
+            <input type="button" id="run" name="run" class="botonesEjecucion" value="CLEAR" onclick="limpiarTablero()"></input>
+
+          </div>
+      </div>
+      <div id="opciones">
+        <div id="numeros">
+          <div id="contenedorCero"class="contenedorBotones laterales">
+            <div id="num0" class="boton verde num">0</div>
+          </div>
+          <div id="primerTercio" class="tercios contenedorBotones">
+            <div class="num red boton">3</div>    
+            <div class="num black boton">6</div>
+            <div class="num red boton">9</div>  
+            <div class="num red boton">12</div> 
+      
+            <div class="num black boton">2</div>
+            <div class="num red boton">5</div>    
+            <div class="num black boton">8</div>
+            <div class="num black boton">11</div>
+      
+            <div class="num red boton">1</div> 
+            <div class="num black boton">4</div>
+            <div class="num red boton">7</div> 
+            <div class="num black boton">10</div>
+      
+            <div id="tercio1" class="tercioButton boton">1-12</div>
+            <div id="menor" class="mayorMenorButton tercerafila boton">MENOR</div>
+            <div id="par"class="parImparButton tercerafila boton">PAR</div>
+          </div>
+      
+          <div id="segundoTercio" class="tercios contenedorBotones">
+            <div class="num black boton">15</div>
+            <div class="num red boton">18</div>
+            <div class="num red boton">21</div> 
+            <div class="num black boton">24</div>
+      
+            <div class="num red boton">14</div>
+            <div class="num black boton">17</div>
+            <div class="num black boton">20</div>
+            <div class="num red boton">23</div>
+      
+            <div class="num black boton">13</div>
+            <div class="num red boton">16</div>
+            <div class="num red boton">19</div>
+            <div class="num black boton">22</div>
+      
+            <div id="tercio2" class="tercioButton boton">13-24</div>
+            <div id="red" class="rojoNegroButton red tercerafila boton">ROJO</div>
+            <div id = "black"class="rojoNegroButton black tercerafila boton">NEGRO</div>
+          </div>
+      
+          <div id="tercerTercio" class="tercios contenedorBotones">
+            <div class="num red boton">27</div>
+            <div class="num red boton">30</div>
+            <div class="num black boton">33</div>
+            <div class="num red boton">36</div>
+      
+            <div class="num black boton">26</div>
+            <div class="num black boton">29</div>
+            <div class="num red boton">32</div>
+            <div class="num black boton">35</div>
+      
+            <div class="num red boton">25</div>
+            <div class="num black boton">28</div>
+            <div class="num black boton">31</div>
+            <div class="num red boton">34</div>
+      
+            <div id="terctio3"class="tercioButton boton">25-36</div>
+            <div id="impar"class="parImparButton tercerafila boton">IMPAR</div>
+            <div id="mayor" class="mayorMenorButton tercerafila boton">MAYOR</div>
+          </div>
+          <div id="filasNumeros" class="contenedorButtons laterales">
+            <div id="primeraFilaNumeros" class="boton fila">2TO1</div>
+            <div id="segundaFilaNumeros" class="boton fila">2TO1</div>
+            <div id="terceraFilaNumeros" class="boton fila">2TO1</div>
+          </div>
+        </div>
+        <div id="contenedorFichas" class="contenedorButton">
+          <div id="ficha1" data-value="1" class="ficha" draggable="true" style="background-color: #e0dc8b;">1</div>
+          <div id="ficha5" data-value="5" class="ficha" draggable="true" style="background-color: #f6aa3d;">5</div>
+          <div id="ficha10" data-value="10" class="ficha" draggable="true" style="background-color: #ed4c57;">10</div>
+          <div id="ficha25" data-value="25" class="ficha" draggable="true" style="background-color: #6cc4b9;">25</div>
+          <div id="ficha50" data-value="50" class="ficha" draggable="true" style="background-color: #574435;">50</div>
+          <div id="ficha100" data-value="100" class="ficha" draggable="true" style="background-color: #1a081f;">100</div>
+        </div>
+      </div>
+    </div>
+    <div id="contenedorDerecha">
+      <ul id="numerosCalientesContenedor" class="numerosTemperatura">
+        NUMEROS<br><span style="color: #E74C3C">CALIENTES</span>:
+        <li class="numerosCalientes">-</li>
+        <li class="numerosCalientes">-</li>
+        <li class="numerosCalientes">-</li>
+      </ul>
+      <ul id="numerosFriosContenedor" class="numerosTemperatura">
+        NUMEROS<br><span style="color: #87CEEB">FRIOS</span>: 
+        <li class="numerosFrios">-</li>
+        <li class="numerosFrios">-</li>
+        <li class="numerosFrios">-</li>
+      </ul>
+      <div id="cantidadDeVecesTiradas">
+        TIRADAS:
+      </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="apuestas.js"></script>
+    <script src="inicio.js"></script>
+    <script src="eventListeners.js"></script>
+  </body>
+</html>
